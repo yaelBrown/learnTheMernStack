@@ -1,0 +1,32 @@
+Learn Mern Stack notes. 
+https://www.youtube.com/watch?v=5yTazHkDR4o&list=PLillGF-RfqbbiTGgA77tGO426V3hRF9iE&index=2
+
+
+npm init
+  entry point: server.js (for fullstack apps)
+
+npm install express body-parser mongoose concurrently
+  concurrently - lets you run the server and client at the same time
+  body-parser - lets you take GET requests and access database
+  mongoose - Is JS Database ORM (object-relational mapping) framework
+  express - Allows you to run server in node for productivity. 
+
+  nodemon - (like live-server) automattically updates the server when you make changes
+
+add scripts to package.json (after test script)
+  "start": "node server.js",          // starts production node server
+  "server": "live-server"             // starts developement server
+
+create server.js 
+
+Get mongoDB URI (uniform resource identifier) (can use local db instead)
+  mlab.com
+    create account or login
+    create new
+      aws cloud provider
+      sandbox
+      us east
+      [name the project]
+      summary (hit continue)
+    create a user for database
+    9:24
