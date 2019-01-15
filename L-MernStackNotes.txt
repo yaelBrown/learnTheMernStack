@@ -19,14 +19,40 @@ add scripts to package.json (after test script)
 
 create server.js 
 
-Get mongoDB URI (uniform resource identifier) (can use local db instead)
-  mlab.com
-    create account or login
-    create new
-      aws cloud provider
-      sandbox
-      us east
-      [name the project]
-      summary (hit continue)
-    create a user for database
-    9:24
+Backend
+  Get mongoDB URI (uniform resource identifier) (can use local db instead)
+    mlab.com
+      create account or login
+      create new
+        aws cloud provider
+        sandbox
+        us east
+        [name the project]
+        summary (hit continue)
+      create a user for database
+      copy the mongodb uri
+    
+    create /config/keys.js file
+      add a module exports with the db uri address
+
+    import the export into your server.js file
+
+    add the heroku commands (they are in server.js)
+
+    test server
+      npm run server 
+        it should bring up a indexof page because there is no index.html file. 
+
+  Create schema
+    Create models folder
+      create items.js
+        schema info - https://mongoosejs.com/docs/schematypes.html
+        export the items 
+
+  Create routes
+    create /routes/api/items.js file (and associative folders)
+      add require into server.js file
+        add routes
+          The middleware of routes is to get information from database with moongoose and add to your application. 
+        GET POST and DELETE
+
