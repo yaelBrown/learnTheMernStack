@@ -56,3 +56,16 @@ Backend
           The middleware of routes is to get information from database with moongoose and add to your application. 
         GET POST and DELETE
 
+create client folder
+  run create-react-app . (install react into client folder)
+    create a "proxy" entry in /client/package.json to local host after the scripts part ( "proxy": "http://localhost:5000" )
+  
+  verify concurrently is installed on the server (look at server package.json)
+
+  add scripts commands to package.json
+    "client": "npm start --prefix client",
+    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "client-install": "npm install -- prefix client",
+
+  will have to run server and client seperately while continuing to develope.   
+    Concurrently sucks.
