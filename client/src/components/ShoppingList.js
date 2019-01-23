@@ -16,7 +16,7 @@ class ShoppingList extends Component {
   render() {
     const { items } = this.state;
     return(
-      <container>
+      <container className="container">
         <Button
           color="dark"
           style={{marginBottom: '2rem'}}
@@ -29,6 +29,27 @@ class ShoppingList extends Component {
             }
           }}
         >Add Item</Button>
+
+        <ListGroup>
+          <TransitionGroup className="shopping-list">
+            {items.map(({id, name }) => (
+              <CSSTransition key={id} timeout={500} classNames="fade">
+                <ListGroupItem>
+                  <Button 
+                    className="remove-btn" 
+                    color="danger" 
+                    size="sm" 
+                    onClick={() => {
+                      this.setState(state => ({
+                        items: state.items.filter(items => items.id !== id)
+                      }))
+                  }}>&times;</Button>
+                  {name}
+                </ListGroupItem>
+              </CSSTransition>
+            ))}
+          </TransitionGroup>
+        </ListGroup>
       </container>
     )
   }
